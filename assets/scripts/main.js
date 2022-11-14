@@ -104,7 +104,7 @@ async function getRecipes() {
         recipes.push(await (await fetch(RECIPE_URLS[i])).json());
       } catch (e) {
         console.error(e);
-        reject(e);
+        return reject(e);
       }
     }
     saveRecipesToStorage(recipes);
